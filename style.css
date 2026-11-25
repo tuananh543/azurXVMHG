@@ -256,3 +256,11 @@ h1{
   .side.open ul{display:flex}
 }
 @media (prefers-reduced-motion:reduce){.side,.side a span{transition:none}}
+/* Icon hợp tác: luôn căn giữa ở mọi trang */
+.coop{justify-content:center}
+
+/* Đoạn mô tả của các trang thông tin */
+.page-desc{
+  margin:0;max-width:640px;text-align:left;
+  font-size:15px;line-height:1.8;color:var(--text);
+}

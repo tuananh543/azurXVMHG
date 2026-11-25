@@ -63,7 +63,9 @@
 
   (CONFIG.infoBlocks||[]).forEach(function(b,i){
     var id=b.id||('muc-'+(i+1));
-    makeView(id,b.title).appendChild(infoList(b.items));
+    var bv=makeView(id,b.title);
+    if(b.desc)bv.appendChild(el('p','page-desc',b.desc));
+    else bv.appendChild(infoList(b.items));
     pages.push({id:id,nav:b.nav||b.title,icon:b.icon||'doc'});
   });
 
@@ -132,6 +134,7 @@
   // ---- Chuyển trang theo #tên-trang ----
   function show(id){
     if(!views[id])id='home';
+    document.body.classList.toggle('is-home', id!=='home');
     Object.keys(views).forEach(function(k){views[k].hidden=(k!==id)});
     links.forEach(function(a){
       if(a.dataset.id===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');

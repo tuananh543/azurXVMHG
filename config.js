@@ -30,37 +30,19 @@ const CONFIG = {
   // (hiện theo đúng thứ tự bên dưới, nằm giữa phần số liệu và phần trang phục)
   infoBlocks: [
     {
-      id: "ca-nhan", icon: "person",   // id = tên trang (hiện trên thanh địa chỉ), icon = biểu tượng ở thanh menu
+      id: "ca-nhan", icon: "person",
       title: "Thông tin cá nhân",
-      items: [
-        { label: "Tên",           value: "AzurXVMHG" },
-        { label: "Chức vụ",       value: "Trưởng phòng Hậu cần - Kỹ thuật" },
-        { label: "Đơn vị",        value: "Đoàn Nghi Lễ Quân Đội" },
-        { label: "Ngày gia nhập", value: "Đang cập nhật" },
-        { label: "Liên hệ",       value: "Đang cập nhật" }
-      ]
+      desc: "AzurXVMHG mang quân hàm Thượng sĩ, giữ chức vụ Trưởng phòng Hậu cần - Kỹ thuật thuộc Đoàn Nghi Lễ Quân Đội. Gia nhập đơn vị từ ngày 13/03/2026."
     },
     {
       id: "don-vi", icon: "shield",
       title: "Thông tin đơn vị",
-      items: [
-        { label: "Tên đơn vị",     value: "Đoàn Nghi Lễ Quân Đội" },
-        { label: "Phương châm",    value: "Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực" },
-        { label: "Nhiệm vụ",       value: "Tham gia các buổi duyệt binh, lễ đón và nghi thức chào cờ" },
-        { label: "Hợp tác cùng",   value: "Quân đội nhân dân Việt Nam" },
-        { label: "Ngày thành lập", value: "Đang cập nhật" },
-        { label: "Quân số",        value: "Đang cập nhật" }
-      ]
+      desc: "Đoàn Nghi Lễ Quân Đội hợp tác cùng Quân đội nhân dân Việt Nam, hoạt động theo phương châm: Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực. Nhiệm vụ của đơn vị là tham gia các buổi duyệt binh, lễ đón và nghi thức chào cờ."
     },
     {
       id: "phong-ban", icon: "briefcase",
       title: "Phòng ban đang công tác",
-      items: [
-        { label: "Phòng ban",  value: "Phòng Hậu cần - Kỹ thuật" },
-        { label: "Trưởng phòng", value: "AzurXVMHG" },
-        { label: "Nhân sự",    value: "3 thành viên" },
-        { label: "Nhiệm vụ",   value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
-      ]
+      desc: "Phòng Hậu cần - Kỹ thuật do AzurXVMHG làm Trưởng phòng, hiện có 3 thành viên. Phòng phụ trách quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ."
     }
   ],
 
@@ -73,24 +55,24 @@ const CONFIG = {
     intro: "Các loại trang phục theo từng hoàn cảnh sử dụng.",
     items: [
       {
-        name: "Lễ phục nghi lễ (màu trắng)",
-        photo: "",
-        desc: "Trang phục trang trọng nhất của đoàn, mặc trong duyệt binh, lễ đón và chào cờ. Gồm mũ kê-pi trắng gắn quân hiệu, áo trắng dài tay cổ đứng cài kín cúc, quần trắng ly là sắc nét, thắt lưng da, giày da đen đánh bóng, kèm găng tay trắng, cầu vai và huy hiệu đơn vị."
+        name: "K08 Tiêu binh danh dự Lục Quân",
+        photo: "images/k08-lucquan.jpg",
+        desc: "Là trang phục nghi lễ, danh dự và tiêu binh thuộc hệ thống quân phục cải tiến K08 của Quân đội nhân dân Việt Nam. Sử dụng cho đội danh dự, đội nghi lễ, tiêu binh gác và các khối diễu binh, duyệt binh, đón tiếp khách cấp cao hoặc các ngày lễ lớn của đất nước và quân đội. K08 Tiêu binh danh dự Lục quân sử dụng màu xanh ô liu sẫm làm tông màu chủ đạo. "
       },
       {
-        name: "Quân phục thường dùng",
+        name: "K08 Tiêu binh danh dự Hải Quân",
         photo: "",
-        desc: "Mặc hằng ngày khi làm việc, họp và giao ban. Gồm mũ theo quy định, bộ quân phục có cấp hiệu và phù hiệu, biển tên đeo đúng vị trí, giày da đen hoặc giày quân dụng."
+        desc: "Là trang phục nghi lễ, danh dự và tiêu binh thuộc hệ thống quân phục cải tiến K08 của Quân đội nhân dân Việt Nam. Sử dụng cho đội danh dự, đội nghi lễ, tiêu binh gác và các khối diễu binh, duyệt binh, đón tiếp khách cấp cao hoặc các ngày lễ lớn của đất nước và quân đội. K08 Tiêu binh danh dự Hải quân sử dụng màu trắng tinh khiết làm tông màu chủ đạo cho cả trang phục chính và mũ, kết hợp với các chi tiết nhận diện màu xanh đen (tím than) và màu vàng đồng đặc trưng của lực lượng Hải quân."
       },
       {
-        name: "Trang phục kỹ thuật, bảo hộ",
-        photo: "",
-        desc: "Dành cho công việc kiểm tra, sửa chữa, vận chuyển trang bị tại Phòng Hậu cần - Kỹ thuật. Gồm bộ đồ kỹ thuật bền, dễ vận động, găng tay bảo hộ và giày bảo hộ chống trượt. Không mặc khi vào đội hình nghi lễ."
+        name: "K08 Tiêu binh danh dự PK-KQ",
+        photo: "images/k08-pkkq.jpg",
+        desc: "Là trang phục nghi lễ, danh dự và tiêu binh thuộc hệ thống quân phục cải tiến K08 của Quân đội nhân dân Việt Nam. Sử dụng cho đội danh dự, đội nghi lễ, tiêu binh gác và các khối diễu binh, duyệt binh, đón tiếp khách cấp cao hoặc các ngày lễ lớn của đất nước và quân đội. K08 Tiêu binh danh dự PK-KQ sử dụng màu xanh hòa bình (xanh da trời nhạt / xanh dương nhạt) làm tông màu chủ đạo cho trang phục chính, kết hợp với các chi tiết nhận diện màu xanh hòa bình sẫm (xanh dương đậm) đặc trưng của lực lượng canh giữ bầu trời."
       },
       {
-        name: "Trang phục huấn luyện",
-        photo: "",
-        desc: "Mặc trong các buổi tập đội hình và rèn thể lực. Gồm áo thun huấn luyện của đơn vị, quần thể thao hoặc quần huấn luyện và giày thể thao; cả đội mặc đồng bộ."
+        name: "K16 Off-duty(thường phục)",
+        photo: "images/k16-offduty.jpg",
+        desc: "K16 thường phục là cách gọi bộ quân phục thường dùng (sinh hoạt, học tập, đi phép) của hạ sĩ quan, chiến sĩ và học viên trong Quân đội Nhân dân Việt Nam. Dùng cho sinh hoạt hằng ngày, học tập, lao động, đi phép và các hoạt động thường xuyên. Quần áo đồng bộ màu xanh đặc trưng của quân binh chủng, vải bền, thoáng khí và đường may chắc chắn."
       }
     ]
   },
@@ -99,8 +81,8 @@ const CONFIG = {
   // (nếu bỏ trống, trang sẽ hiện chữ cái viết tắt của tên)
   teamTitle: "Thành viên trong phòng Hậu cần - Kỹ thuật",
   members: [
-    { name: "AzurXVMHG",    role: "Trưởng phòng",       photo: "" },
+    { name: "AzurXVMHG",               role: "Trưởng phòng",       photo: "" },
     { name: "Thainguyen13127real",     role: "Nhân sự",          photo: "" },
-    { name: "Hayphaion",     role: "Nhân sự",          photo: "" }
+    { name: "Hayphaion",               role: "Nhân sự",          photo: "" }
   ]
 };
