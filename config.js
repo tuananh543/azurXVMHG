@@ -30,19 +30,37 @@ const CONFIG = {
   // (hiện theo đúng thứ tự bên dưới, nằm giữa phần số liệu và phần trang phục)
   infoBlocks: [
     {
-      id: "ca-nhan", icon: "person",
+      id: "ca-nhan", icon: "person",   // id = tên trang (hiện trên thanh địa chỉ), icon = biểu tượng ở thanh menu
       title: "Thông tin cá nhân",
-      desc: "AzurXVMHG mang quân hàm Thượng sĩ, giữ chức vụ Trưởng phòng Hậu cần - Kỹ thuật thuộc Đoàn Nghi Lễ Quân Đội. Gia nhập đơn vị từ ngày 13/03/2026."
+      items: [
+        { label: "Tên",           value: "AzurXVMHG" },
+        { label: "Quân hàm",      value: "Thượng sĩ" },
+        { label: "Chức vụ",       value: "Trưởng phòng Hậu cần - Kỹ thuật" },
+        { label: "Đơn vị",        value: "Đoàn Nghi Lễ Quân Đội" },
+        { label: "Ngày gia nhập", value: "13/03/2026" }
+      ]
     },
     {
       id: "don-vi", icon: "shield",
       title: "Thông tin đơn vị",
-      desc: "Đoàn Nghi Lễ Quân Đội hợp tác cùng Quân đội nhân dân Việt Nam, hoạt động theo phương châm: Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực. Nhiệm vụ của đơn vị là tham gia các buổi duyệt binh, lễ đón và nghi thức chào cờ."
+      items: [
+        { label: "Tên đơn vị",     value: "Đoàn Nghi Lễ Quân Đội" },
+        { label: "Khẩu hiệu",      value: "Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực" },
+        { label: "Nhiệm vụ",       value: "Tham gia các buổi duyệt binh, nghi thức chào cờ, lễ đón nguyên thủ quốc gia và các Đoàn Đại Sứ Quán." },
+        { label: "Hợp tác cùng",   value: "Quân đội nhân dân Việt Nam" },
+        { label: "Ngày thành lập", value: "01/07/2025" },
+        { label: "Quân số",        value: "29 thành viên tiêu binh danh dự" }
+      ]
     },
     {
       id: "phong-ban", icon: "briefcase",
       title: "Phòng ban đang công tác",
-      desc: "Phòng Hậu cần - Kỹ thuật do AzurXVMHG làm Trưởng phòng, hiện có 3 thành viên. Phòng phụ trách quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ."
+      items: [
+        { label: "Phòng ban",  value: "Phòng Hậu cần - Kỹ thuật" },
+        { label: "Trưởng phòng", value: "AzurXVMHG" },
+        { label: "Nhân sự",    value: "3 thành viên" },
+        { label: "Nhiệm vụ",   value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
+      ]
     }
   ],
 
