@@ -218,5 +218,51 @@
       (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     root.setAttribute('data-theme',dark?'light':'dark');
     if(reduce)draw();
+      // ---- Intro: chữ bay vào, đánh máy, click để vào + bật nhạc ----
+  (function(){
+    var I=CONFIG.intro, intro=$('intro');
+    if(!I||!intro){if(intro)intro.remove();return}
+    document.body.classList.add('intro-on');
+
+    // Chữ bay vào từ 4 phía (trên, phải, dưới, trái)
+    var dirs=[['0','-120vh'],['120vw','0'],['0','120vh'],['-120vw','0']];
+    var words=I.title.split(' ');
+    words.forEach(function(w,i){
+      var s=el('span','w',w);
+      s.style.setProperty('--i',i);
+      s.style.setProperty('--x',dirs[i%4][0]);
+      s.style.setProperty('--y',dirs[i%4][1]);
+      $('introTitle').appendChild(s);
+    });
+
+    // Đánh máy từng chữ sau khi chữ bay xong
+    var hint=$('introHint'),ready=false;
+    hint.textContent=I.hint||'Click để vào';
+    function typeUrl(){
+      var t=I.url||'',i=0,box=$('introUrl');
+      (function step(){
+        box.textContent=t.slice(0,i);
+        if(i++<t.length)setTimeout(step,reduce?0:75);
+        else{hint.classList.add('show');ready=true}
+      })();
+    }
+    setTimeout(typeUrl,reduce?0:words.length*250+1000);
+
+    // Click để vào + bật nhạc
+    var audio=$('bgm');
+    if(I.music)audio.src=I.music;
+    function enter(){
+      if(intro.classList.contains('out'))return;
+      if(I.music){audio.volume=.6;audio.play().catch(function(){})}
+      intro.classList.add('out');
+      document.body.classList.remove('intro-on');
+      setTimeout(function(){intro.remove()},800);
+    }
+    intro.addEventListener('click',enter);
+    intro.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();enter()}
+    });
+    intro.focus();
+  })();
   };
 })();
