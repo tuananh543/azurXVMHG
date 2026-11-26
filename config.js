@@ -49,7 +49,7 @@ const CONFIG = {
         { label: "Nhiệm vụ",       value: "Tham gia các buổi duyệt binh, nghi thức chào cờ, lễ đón nguyên thủ quốc gia và các Đoàn Đại Sứ Quán." },
         { label: "Hợp tác cùng",   value: "Quân đội nhân dân Việt Nam" },
         { label: "Ngày thành lập", value: "01/07/2025" },
-        { label: "Quân số",        value: "29 thành viên tiêu binh danh dự" }
+        { label: "Quân số",        value: "29 Thành viên tiêu binh danh dự" }
       ]
     },
     {
