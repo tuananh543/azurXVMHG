@@ -264,49 +264,46 @@ h1{
   margin:0;max-width:640px;text-align:left;
   font-size:15px;line-height:1.8;color:var(--text);
 }
-  // ---- Intro: chữ bay vào, đánh máy, click để vào + bật nhạc ----
-  (function(){
-    var I=CONFIG.intro, intro=$('intro');
-    if(!I||!intro){if(intro)intro.remove();return}
-    document.body.classList.add('intro-on');
 
-    // Chữ bay vào từ 4 phía (trên, phải, dưới, trái)
-    var dirs=[['0','-120vh'],['120vw','0'],['0','120vh'],['-120vw','0']];
-    var words=I.title.split(' ');
-    words.forEach(function(w,i){
-      var s=el('span','w',w);
-      s.style.setProperty('--i',i);
-      s.style.setProperty('--x',dirs[i%4][0]);
-      s.style.setProperty('--y',dirs[i%4][1]);
-      $('introTitle').appendChild(s);
-    });
-
-    // Đánh máy từng chữ sau khi chữ bay xong
-    var hint=$('introHint'),ready=false;
-    hint.textContent=I.hint||'Click để vào';
-    function typeUrl(){
-      var t=I.url||'',i=0,box=$('introUrl');
-      (function step(){
-        box.textContent=t.slice(0,i);
-        if(i++<t.length)setTimeout(step,reduce?0:75);
-        else{hint.classList.add('show');ready=true}
-      })();
-    }
-    setTimeout(typeUrl,reduce?0:words.length*250+1000);
-
-    // Click để vào + bật nhạc
-    var audio=$('bgm');
-    if(I.music)audio.src=I.music;
-    function enter(){
-      if(intro.classList.contains('out'))return;
-      if(I.music){audio.volume=.6;audio.play().catch(function(){})}
-      intro.classList.add('out');
-      document.body.classList.remove('intro-on');
-      setTimeout(function(){intro.remove()},800);
-    }
-    intro.addEventListener('click',enter);
-    intro.addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();enter()}
-    });
-    intro.focus();
-  })();
+/* ===== Màn hình intro ===== */
+body.intro-on{overflow:hidden}
+.intro{
+  position:fixed;inset:0;z-index:1000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  padding:24px;text-align:center;cursor:pointer;outline:none;
+  background:var(--bg);color:var(--text);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.intro.out{opacity:0;transform:scale(1.05);pointer-events:none}
+.intro-icons{display:flex;gap:22px;color:var(--a2)}
+.intro-icons span{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
+.intro-icons svg{
+  width:28px;height:28px;
+  fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.intro-title{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.25em .4em;
+  max-width:640px;font-family:"Syne","Be Vietnam Pro",sans-serif;font-weight:800;
+  font-size:clamp(28px,7vw,52px);line-height:1.15;letter-spacing:-.02em;
+}
+.intro-title .w{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--a1),var(--a2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:wordIn .9s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:calc(var(--i) * .25s);
+}
+@keyframes wordIn{from{opacity:0;transform:translate(var(--x),var(--y))}}
+.intro-url{min-height:1.6em;font-family:ui-monospace,Consolas,monospace;font-size:clamp(14px,3.6vw,18px);color:var(--muted)}
+.caret{display:inline-block;width:2px;height:1.1em;margin-left:3px;vertical-align:-.15em;background:var(--a2);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.intro-hint{margin:6px 0 0;font-size:13px;color:var(--muted);opacity:0;transition:opacity .6s}
+.intro-hint.show{opacity:1;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.intro-title .w,.caret,.intro-hint.show{animation:none}}
+.sec{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.sec-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:clamp(17px,3vw,20px);font-weight:800;letter-spacing:-.01em}
+.sec-title::before{content:"";flex:none;width:4px;height:18px;border-radius:2px;background:linear-gradient(var(--a1),var(--a2))}
+.sec-desc{margin:0;max-width:640px;font-size:15px;line-height:1.8;color:var(--text)}
+.sec-name{display:inline-block;margin:0 0 12px;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--a1);background:var(--surface);border:1px solid var(--line)}

@@ -66,6 +66,12 @@
     var bv=makeView(id,b.title);
     if(b.desc)bv.appendChild(el('p','page-desc',b.desc));
     else bv.appendChild(infoList(b.items));
+        (b.sections||[]).forEach(function(sec){
+          var box=el('div','sec');
+          box.appendChild(el('h3','sec-title',sec.title));
+          box.appendChild(el('p','sec-desc',sec.desc));
+          bv.appendChild(box);
+        });
     pages.push({id:id,nav:b.nav||b.title,icon:b.icon||'doc'});
   });
 
@@ -218,7 +224,9 @@
       (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     root.setAttribute('data-theme',dark?'light':'dark');
     if(reduce)draw();
-      // ---- Intro: chữ bay vào, đánh máy, click để vào + bật nhạc ----
+  };
+
+  // ---- Intro: chữ bay vào, đánh máy, click để vào + bật nhạc ----
   (function(){
     var I=CONFIG.intro, intro=$('intro');
     if(!I||!intro){if(intro)intro.remove();return}
@@ -236,21 +244,24 @@
     });
 
     // Đánh máy từng chữ sau khi chữ bay xong
-    var hint=$('introHint'),ready=false;
+    var hint=$('introHint');
     hint.textContent=I.hint||'Click để vào';
     function typeUrl(){
       var t=I.url||'',i=0,box=$('introUrl');
       (function step(){
         box.textContent=t.slice(0,i);
         if(i++<t.length)setTimeout(step,reduce?0:75);
-        else{hint.classList.add('show');ready=true}
+        else hint.classList.add('show');
       })();
     }
     setTimeout(typeUrl,reduce?0:words.length*250+1000);
 
-    // Click để vào + bật nhạc
-    var audio=$('bgm');
+    // Nhạc: tự tạo đối tượng Audio (không cần thẻ <audio> trong HTML)
+    var audio=new Audio();
+    audio.loop=true;
     if(I.music)audio.src=I.music;
+
+    // Click để vào + bật nhạc
     function enter(){
       if(intro.classList.contains('out'))return;
       if(I.music){audio.volume=.6;audio.play().catch(function(){})}
@@ -264,5 +275,5 @@
     });
     intro.focus();
   })();
-  };
 })();
+  

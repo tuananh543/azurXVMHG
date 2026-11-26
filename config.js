@@ -18,16 +18,16 @@ const CONFIG = {
   partnerText: "Hợp tác cùng Quân đội nhân dân Việt Nam",
   intro: {
     title: "Welcome to Vietnam Military Honor Guard",
-    url:   "aazurxvmhg.netlify.app",
+    url:   "AzurXVMHG.netlify.app",
     hint:  "Click để vào",
     music: "music/nhac.mp3"   // bỏ file nhạc vào thư mục music/ (hoặc đổi đường dẫn)
   },
  
   // Số liệu (thêm/bớt tuỳ ý)
   stats: [
-    { value: "5+", label: "Năm kinh nghiệm" },
-    { value: "40", label: "Dự án" },
-    { value: "12", label: "Khách hàng" }
+    { value: "Chính trực", label: "" },
+    { value: "Kỷ luật", label: "" },
+    { value: "Danh dự", label: "" }
   ],
 
   // Mỗi khối dưới đây là MỘT TRANG riêng, tự có mục trong thanh menu bên trái.
@@ -52,10 +52,17 @@ const CONFIG = {
       items: [
         { label: "Tên đơn vị",     value: "Đoàn Nghi Lễ Quân Đội" },
         { label: "Khẩu hiệu",      value: "Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực" },
-        { label: "Nhiệm vụ",       value: "Tham gia các buổi duyệt binh, nghi thức chào cờ, lễ đón nguyên thủ quốc gia và các Đoàn Đại Sứ Quán." },
+        { label: "Nhiệm vụ",       value: "T ham gia các buổi duyệt binh, nghi thức chào cờ, lễ đón nguyên thủ quốc gia và các Đoàn Đại Sứ Quán." },
         { label: "Hợp tác cùng",   value: "Quân đội nhân dân Việt Nam" },
         { label: "Ngày thành lập", value: "01/07/2025" },
         { label: "Quân số",        value: "29 Thành viên tiêu binh danh dự" }
+      ],
+      sections: [
+        {
+          title: "Các đơn vị trực thuộc",
+          name:  "Phòng hậu cần - kỹ thuật",
+          desc:  "Nội dung mô tả của bạn..."
+        }
       ]
     },
     {
