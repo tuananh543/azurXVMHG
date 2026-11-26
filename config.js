@@ -56,10 +56,10 @@ const CONFIG = {
       id: "phong-ban", icon: "briefcase",
       title: "Phòng ban đang công tác",
       items: [
-        { label: "Phòng ban",  value: "Phòng Hậu cần - Kỹ thuật" },
+        { label: "Phòng ban",    value: "Phòng Hậu cần - Kỹ thuật" },
         { label: "Trưởng phòng", value: "AzurXVMHG" },
-        { label: "Nhân sự",    value: "3 thành viên" },
-        { label: "Nhiệm vụ",   value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
+        { label: "Nhân sự",      value: "3 thành viên" },
+        { label: "Nhiệm vụ",     value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
       ]
     }
   ],
