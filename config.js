@@ -16,7 +16,13 @@ const CONFIG = {
   role: "Đoàn Nghi Lễ Quân Đội",
   bio:  "Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực, vì Tổ Quốc, vì nhân dân phục vụ",
   partnerText: "Hợp tác cùng Quân đội nhân dân Việt Nam",
-
+  intro: {
+    title: "Welcome to Vietnam Military Honor Guard",
+    url:   "aazurxvmhg.netlify.app",
+    hint:  "Click để vào",
+    music: "music/nhac.mp3"   // bỏ file nhạc vào thư mục music/ (hoặc đổi đường dẫn)
+  },
+ 
   // Số liệu (thêm/bớt tuỳ ý)
   stats: [
     { value: "5+", label: "Năm kinh nghiệm" },
@@ -56,10 +62,10 @@ const CONFIG = {
       id: "phong-ban", icon: "briefcase",
       title: "Phòng ban đang công tác",
       items: [
-        { label: "Phòng ban",  value: "Phòng Hậu cần - Kỹ thuật" },
+        { label: "Phòng ban",    value: "Phòng Hậu cần - Kỹ thuật" },
         { label: "Trưởng phòng", value: "AzurXVMHG" },
-        { label: "Nhân sự",    value: "3 thành viên" },
-        { label: "Nhiệm vụ",   value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
+        { label: "Nhân sự",      value: "3 thành viên" },
+        { label: "Nhiệm vụ",     value: "Quản lý trang phục, trang bị, vật tư và bảo đảm kỹ thuật cho các buổi nghi lễ" }
       ]
     }
   ],
