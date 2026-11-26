@@ -16,7 +16,13 @@ const CONFIG = {
   role: "Đoàn Nghi Lễ Quân Đội",
   bio:  "Trung thành vô hạn, đoàn kết một lòng, năng động sáng tạo, chính quy mẫu mực, vì Tổ Quốc, vì nhân dân phục vụ",
   partnerText: "Hợp tác cùng Quân đội nhân dân Việt Nam",
-
+  intro: {
+    title: "Welcome to Vietnam Military Honor Guard",
+    url:   "aazurxvmhg.netlify.app",
+    hint:  "Click để vào",
+    music: "music/nhac.mp3"   // bỏ file nhạc vào thư mục music/ (hoặc đổi đường dẫn)
+  },
+ 
   // Số liệu (thêm/bớt tuỳ ý)
   stats: [
     { value: "5+", label: "Năm kinh nghiệm" },
